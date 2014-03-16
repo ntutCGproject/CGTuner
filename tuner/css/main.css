@@ -16,7 +16,7 @@ p {
   font-size: 90%;
 }
 body {
-  background-color: #00BB00;
+  background-color: #DC7100;
   font-family: 'Digital W00';
   color: rgba(255, 255, 255, 0.6);
 }
@@ -408,7 +408,7 @@ body {
 }
 #noteView {
   font-family: 'Digital W00';
-  top: 0px;
+  top: 160px;
   left: 125px;
   width: 200px;
   height: 400px;

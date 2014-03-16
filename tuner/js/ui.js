@@ -9,72 +9,74 @@ window.addEventListener('load', function(){
 		var $div = $("<div>", {id: "tick_"+(-1)*i});
 		$tunerViewContainer.append($div);
 	};
+	var $div = $("<div>", {id: "noteView", text:"N"});
+	$tunerViewContainer.append($div);
 });	
 
 var timerInterval;
 
 function play()
 {
-	var div = document.getElementById("playPause");
-	div.className = "pause";
+//	var div = document.getElementById("playPause");
+//	div.className = "pause";
 	startAudio();
-	startClock();
+	//startClock();
 }
 
 
-function pause()
-{
-	var div = document.getElementById("playPause");
-	div.className = "play";
-	stopAudio();
+//function pause()
+//{
+//	var div = document.getElementById("playPause");
+//	div.className = "play";
+//	stopAudio();
+//
+//	var message = $("#message");
+//	message.text("Paused: Click Play to continue");
+//	clearInterval(timerInterval);
+//}
+//function playPause(div)
+//{
+//	if(div.className == "pause")
+//	{
+//		pause();
+//	}
+//	else if(div.className == "play")
+//	{
+//		play();
+//	}
+//}
 
-	var message = $("#message");
-	message.text("Paused: Click Play to continue");
-	clearInterval(timerInterval);
-}
-function playPause(div)
-{
-	if(div.className == "pause")
-	{
-		pause();
-	}
-	else if(div.className == "play")
-	{
-		play();
-	}
-}
-
-function startClock()
-{
-	var timeoutLengthSeconds = 5*60;
-	var start = new Date;
-	updateClock(timeoutLengthSeconds);
-    timerInterval = setInterval(function() {
-        var secondsPassed = (new Date - start)/1000;
-        if(secondsPassed < timeoutLengthSeconds)
-        {
-        	updateClock(timeoutLengthSeconds-secondsPassed);
-        }
-        else
-        {
-        	pause();
-        }
-    }, 1000);
-}
-
-function updateClock(timeoutLengthSeconds)
-{
-	function formatNumberLength(num, length) {
-	    var r = "" + num;
-	    while (r.length < length) {
-	        r = "0" + r;
-	    }
-	    return r;
-	}
-	var minutes = Math.floor(timeoutLengthSeconds / 60);
-	var seconds = Math.floor(timeoutLengthSeconds%60);
-	var clock = $("#message").text("Timeout: "+formatNumberLength(minutes,2)+":"+formatNumberLength(seconds,2));
-}
+//function startClock()
+//{
+//	var timeoutLengthSeconds = 5*60;
+//	var start = new Date;
+//	updateClock(timeoutLengthSeconds);
+//    timerInterval = setInterval(function() {
+//        var secondsPassed = (new Date - start)/1000;
+//        if(secondsPassed < timeoutLengthSeconds)
+//        {
+//        	updateClock(timeoutLengthSeconds-secondsPassed);
+//        }
+//        else
+//        {
+//        	pause();
+//        }
+//    }, 1000);
+//}
+//
+//function updateClock(timeoutLengthSeconds)
+//{
+//	function formatNumberLength(num, length) {
+//	    var r = "" + num;
+//	    while (r.length < length) {
+//	        r = "0" + r;
+//	    }
+//	    return r;
+//	}
+//	var minutes = Math.floor(timeoutLengthSeconds / 60);
+//	var seconds = Math.floor(timeoutLengthSeconds%60);
+//	var clock = $("#message").text("Timeout: "+formatNumberLength(minutes,2)+":"+formatNumberLength(seconds,2));
+//}
 
 function updateTuner(noteIndex, noteError) 
 {
