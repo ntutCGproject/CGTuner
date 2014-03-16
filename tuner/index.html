@@ -1,0 +1,62 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta name="description" content="Online Guitar Tuner.">
+	<title>Online Guitar Tuner</title>
+	<script type="text/javascript">
+
+		 var _gaq = _gaq || [];
+		 _gaq.push(['_setAccount', 'UA-48224630-1']);
+		 _gaq.push(['_trackPageview']);
+
+		(function() {
+		   var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		   ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+
+</script>
+	<script type="text/javascript" src="http://fast.fonts.net/jsapi/047054a1-86fd-4cd3-a752-ffaaa77de9cf.js"></script>
+	<script src="socket.io/socket.io.js"></script>
+	<script src="js/AudioContextMonkeyPatch.js"></script>
+	<script src="js/dsp.js"></script>
+	<script src="js/jquery-2.0.3.min.js"></script>
+	<script src="js/ui.js"></script>
+	<script src="js/main.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+</head>
+<body> 
+<div id="title">
+</div>
+<div id="control">
+	<div id="playPauseContainer">
+	<a href="#">
+		<div id="playPause" class="pause" onClick="playPause(this);">
+		</div>
+	</a>
+	</div>
+	<div id="message">
+		Timeout: 
+	</div>
+</div>
+<div id="tunerViewContainer">
+	
+	<div id="tunerView">
+		<div id="tip" class="tipNormal"></div>
+		<div id="needle2"></div>		
+		<div id="tick_0"></div>
+        <div id="noteView">C</div>
+	</div>
+</div>
+<div id="infoContainer">
+	<div id="infoCenter">
+	<div class="info">		
+	</div>
+	<div class="info">
+	</div>
+	<div class="info">
+	</div>
+	</div>
+</div>
+</body>
+</html>
